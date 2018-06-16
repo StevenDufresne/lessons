@@ -1,0 +1,38 @@
+
+
+img {
+	display : block ;
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5 { 
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+.places {
+	background: #1d2124;
+	color: #fff;
+}
+
+.navbar-brand {
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 32px;
+}
+
+.my-cards { 
+	max-width: 1000px;
+}
+
+.card-title { 
+	color: #000; 
+}
+
+.contact {
+	background: #141619;
+	color: #fff;
+}
+
+#map {
+height: 400px;  /* The height is 400 pixels */
+width: 100%;  /* The width is the width of the web page */
+}

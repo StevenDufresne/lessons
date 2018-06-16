@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Photos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Awesome Jeju</a>
+  </nav>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="photos" class="carousel-inner"></div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="places pt-5 pb-5">
+  <h3 class="text-center mb-3">Places to visit</h3>
+
+  <div class="row mx-auto my-cards">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card mb-2">
+      <img class="card-img-top" src="imgs/cards/halla.png">
+      <div class="card-body">
+        <h5 class="card-title">Hallasan</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card mb-2">
+      <img class="card-img-top" src="imgs/cards/hyeopjay.png">
+      <div class="card-body">
+        <h5 class="card-title">HyeopJay Beach</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card mb-2">
+      <img class="card-img-top" src="imgs/cards/jeongbangwaterfall.png">
+      <div class="card-body">
+        <h5 class="card-title">JeongBang Waterfall</h5>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div>
+    <div id="map"></div>
+</div>
+
+<div class="contact pb-5 pt-5">
+  <h3 class="text-center">Want to add a place to my list?</h3>
+    <div class="col-sm-12 col-lg-8 mx-auto">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Place</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="The name of the place">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+<script>
+// Initialize and add the map
+  function initMap() {
+    var halla = {lat: 33.361667, lng: 126.529167};
+    var hj = {lat: 33.395497, lng: 126.236776};
+    var jb = {lat: 33.244852, lng: 126.571803};
+
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 10, center: halla});
+
+    var marker = new google.maps.Marker({position: halla, map: map});
+    var marker = new google.maps.Marker({position: hj, map: map});
+    var marker = new google.maps.Marker({position: jb, map: map});
+  }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvAnbllzHPKxmtmf2YS6wj9VuHK9FwDSU&callback=initMap">
+    </script>
+</body>
+</html>
